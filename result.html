@@ -10,12 +10,13 @@
 </head>
 
 <body>
-    <div id="container">
-        <header>
-            <div class='logo'><img src="assets/img/epicode_logo.png">
+     <header>
+            <div>
+                <img src="assets/img/epicode_logo.png">
             </div>
         </header>
         <main>
+            <div id="principale">
             <div class="titolo">
                 <h1>Results</h1>
                 <h2>The summary of your answer:</h2>
@@ -25,17 +26,8 @@
                     <h2>Correct</h2>
                     <h2 id="successiPercentuale"></h2>
                     <p id="successi"></p>
-                </div> 
-                <div id="valutazioni">
-            <div class="cerchio" style="--clr1:#00ffffdf;">
-                <svg viewBox="-30 0 250 250" width="1500" height="1500">
-                    <circle cx="100" cy="100" r="50"></circle>
-                    <circle cx="100" cy="100" r="50" id="dio"></circle>
-                </svg>
-
-            </div>
-        </div>
-            <div id="testoRotella">
+                </div>
+                <div id="testoRotella">
                     <div id="testoRotellaDue">
                         <h3 id="centro1"></h3>
                         <h3 id="centro2"></h3>
@@ -45,11 +37,13 @@
                         <p id="centro6"></p>
                     </div>
                 </div>
-            <div class='sbagliato'>
+                <div class='sbagliato'>
                     <h2>Wrong</h2>
                     <h2 id="insuccessiPercentuale"></h2>
                     <p id="insuccessi"></p>
                 </div>
+                </div>
+                
             </div>
         </main>
 
