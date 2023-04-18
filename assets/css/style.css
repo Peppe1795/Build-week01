@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Outfit&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Outfit&display=swap');
 
 html,
 body {
@@ -9,7 +9,7 @@ body {
     background-image: url('../img/bg.jpg');
     background-size: cover;
 	background-position: center;
-    height: 100%;
+    height: auto;
     width: 100%;
     background-repeat: no-repeat;
     box-sizing: border-box;
@@ -58,16 +58,27 @@ header img {
 }
 
 .feedback {
-    width: 34%;
+    width: 43%;
     background: transparent;
     border-color: transparent;
     border-bottom-color: #d20094;
-    padding-bottom: 0.8em;
-    padding-left: 2em;
+    padding: 10px;
+    padding-bottom: 4px;
+    padding-left: 25px;
+    margin: 0;
+    color: #d20094;
+    line-height: 1.4em;
+    font-size: 1em;
+    text-shadow: 0 0 20px #d20094;
+}
+
+.feedback:focus {
+    outline: none;
 }
 
 ::placeholder {
     color: #656771;
+    font-size: 1em;
 }
 
 .sezione1 {
@@ -150,12 +161,12 @@ span{
     box-sizing: border-box;
     width: 105%;
     display: inline-block;
-    margin: 0 auto ;
+    margin: 0 auto;
     position: relative;
     top: -11.4em;
     padding: 22px;
     text-align: center;
-    font-size:small;
+    font-size: small;
 }
 
 #countDown {
@@ -164,13 +175,13 @@ span{
 }
 
 .circle p {
-    margin-top: 0px ;
+    margin-top: 0px;
     margin-bottom: 8px;
-    line-height:1.2;
+    line-height: 1.2;
     font-size: x-small;
 }
 
-aside{
+aside {
     display: inline-block;
     text-align: right;
     font-size: 4em;
@@ -208,4 +219,29 @@ aside{
     stroke-dashoffset: 0;
     stroke-linecap:square;
     stroke-linejoin:miter;
+}
+/* css del gradient di valutazione finale*/
+
+
+#valutazioni .circle svg {
+    position: relative;
+    width: 160px;
+    height: 160px;
+
+}
+#valutazioni .cerchio svg {
+    fill: transparent;
+    stroke-width: 10px;
+    stroke: #d20093d5;
+    stroke-linecap: round;
+    transform: translate(4px,4px);
+    transform: rotate(270deg) rotateX(180deg);
+
+}
+
+#valutazioni .cerchio svg circle:nth-child(2) {
+    stroke: var(--clr1);
+    stroke-dasharray: 360;
+    stroke-dashoffset: 200;
+
 }
