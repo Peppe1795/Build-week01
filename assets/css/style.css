@@ -89,10 +89,10 @@ header img {
     padding: 0.2em;
     opacity: 0.1;
 }
+.stars img.stelleColorate {
+    opacity: 1;
+}
 
-.stars img:hover {
- opacity: 1;   
-} 
 
 .titolo{
     font-weight: normal;
