@@ -1,12 +1,10 @@
-var btnVerifica = document.getElementById('bottone1');
+const input = document.querySelector("#check1");
+const button = document.querySelector("#bottone1");
 
-btnVerifica.addEventListener('click', function () {
-    let valore = check1.value;
-    if (valore == true) {
-        btnVerifica.setAttribute('href', '../../quiz.html');
-    } else {
-        alert('devi spuntare la check se vuoiprocedere')
+input = addEventListener("click", () => {
+    if (input.checked) {
+        button.removeAttribute("disabled");
+    }else{
+        button.setAttribute("disabled", true);
     }
-})
-
-btnVerifica();
+});

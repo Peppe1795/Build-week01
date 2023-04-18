@@ -126,6 +126,11 @@ span{
 	width: auto;
 }
 
+#check1:checked {
+    accent-color: #262266;
+   
+}
+
 .ultimoButton {
 	background-color: transparent;
 	padding: 0.7em 2.7em;
