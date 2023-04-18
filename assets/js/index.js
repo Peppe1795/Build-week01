@@ -1,10 +1,22 @@
-const input = document.querySelector("#check1");
-const button = document.querySelector("#bottone1");
+var btnVerifica = document.getElementById('bottone1');
+var checkB = document.getElementById('check1');
 
-input = addEventListener("click", () => {
-    if (input.checked) {
-        button.removeAttribute("disabled");
-    }else{
-        button.setAttribute("disabled", true);
-    }
+window.addEventListener('load', function () {
+    btnVerifica.disabled = true;
+    checkB.checked = false;
 });
+
+const verifica = () => {
+    checkB.addEventListener('click', function () {
+        if (checkB.checked) {
+            btnVerifica.disabled = false;
+        }
+    });
+}
+verifica();
+ 
+btnVerifica.addEventListener('click', function() {
+if (btnVerifica.disabled = false) {
+    btnVerifica.gotoLink('../../quiz.html')
+}
+ });
