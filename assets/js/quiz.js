@@ -115,35 +115,93 @@ let countDown = setInterval(() => {
 
 }, 1000);
 
-var successi = 3;
-var totaleDomande = 10;
-var insuccessi = totaleDomande - successi;
-var successiPercentuale = (successi * 100) / totaleDomande;
-var insuccessiPercentuale = (insuccessi / totaleDomande * 100);
-var testo = document.querySelector('.testoCorrect');
-var btnRateUs = document.getElementById('ultimoButton');
-var indexC = document.getElementById("successi").innerText = ${successi}/${totaleDomande} questions;
-var indexW = document.getElementById("insuccessi").innerHTML = ${insuccessi}/${totaleDomande} questions;
+var index =0;
+var successi=0;
 
-
-document.getElementById("successiPercentuale").innerHTML = "Correct" + "<br>" + successiPercentuale.toFixed(1) + "%" + "<br>";
-document.getElementById("insuccessiPercentuale").innerHTML = "Wrong" + "<br>" + insuccessiPercentuale.toFixed(1) + "%";
-
-
-const value = () => {
-    let calcolo = document.querySelector('#dio').style.strokeDashoffset = 360 - (360 * successi)/10;
-    if(successi >= 6){
-        document.querySelector('testoCorrect').innerHTML = <p><span>Congratulation!</span></p><span style="color:#00ffffdf">You passed the exam.</span><p></p><p>We'll send you the certificate<br>in few minutes<br>Check your email (including <br>promotions / spam folder)</p>
-    }else {
-        document.querySelector('testoCorrect');
-        testo.innerText = Stronzo hai sbagliato tutto;
+const arrayRandomDomande = [];
+const ArrayRandomRisposte = [];
+function arrayDomande() {
+    for (i = 0; i < questions.length; i++) {
+        index = Math.floor(Math.random() * questions.length)
+        if (!arrayRandomDomande.includes(index)) {
+            arrayRandomDomande.push(index);
+        } else {
+            i = i - 1;
+        }
     }
 }
-value()
-const vaiArate = () => {
-    btnRateUs.addEventListener('click', function () {
-        window.open('../../feedback.html');
-    });
+arrayDomande();
+
+console.log(arrayRandomDomande);
+console.log(questions[arrayRandomDomande[0]].question);
+
+ArrayRandomRisposte.push(questions[index].correct_answer)
+for (k = 0; k < questions[index].incorrect_answers.length; k++) {
+    ArrayRandomRisposte.push(questions[index].incorrect_answers[k]);
+}
+ArrayRandomRisposte.sort();
+
+console.log (ArrayRandomRisposte);
+function inserisciTesto() {
+    document.getElementById('domanda').innerHTML = questions[index].question;
+    document.getElementById('a').innerHTML = ArrayRandomRisposte[0];
+    document.getElementById('b').innerHTML = ArrayRandomRisposte[1];
+    document.getElementById('c').innerHTML = ArrayRandomRisposte[2];
+    document.getElementById('d').innerHTML = ArrayRandomRisposte[3];
 }
 
-vaiArate();
+inserisciTesto()
+
+if (questions[index].incorrect_answers.length == 2) {
+    document.getElementById('c').style.display = 'none';
+    document.getElementById('d').style.display = 'none';
+} else {
+    document.getElementById('c').style.display = 'inline-block';
+    document.getElementById('d').style.display = 'inline-block';
+}
+
+var elementA = document.getElementById('a')
+var elementB = document.getElementById('b')
+var elementC = document.getElementById('c')
+var elementD = document.getElementById('d')
+
+function eventHandler (){
+elementA.addEventListener("click", confrontoA());
+elementB.addEventListener("click", confrontoB());
+elementC.addEventListener("click", confrontoC());
+elementD.addEventListener("click", confrontoD());
+}
+
+eventHandler();
+
+function confrontoA() {
+    if (elementA.textContent == questions[index].correct_answer) {
+        successi++
+    }
+    index++
+};
+
+function confrontoB() {
+    if (elementB.textContent == questions[index].correct_answer) {
+        successi++
+    }
+    index++
+}
+function confrontoC() {
+    if (elementC.textContent == questions[index].correct_answer) {
+        successi++
+    }
+    index++
+}
+function confrontoD() {
+    if (elementD.textContent == questions[index].correct_answer) {
+        successi++;
+    }
+    index++;
+}
+
+//localStorage.setItem(successi); // per passare il risultato alla pagina 3
+
+/*if (index > questions.length){
+    window.open("../../result.html")
+}*/

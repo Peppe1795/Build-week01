@@ -10,14 +10,12 @@
 </head>
 
 <body>
+    <header>
+        <div>
+            <img src="assets/img/epicode_logo.png">
+        </div>
+    </header>
     <main id="container">
-        <header>
-            <div>
-                <img src="assets/img/epicode_logo.png">
-            </div>
-
-        </header>
-
         <div id="cover-center">
             <span>
                 <h1>Results</h1>
@@ -31,33 +29,32 @@
                         <circle cx="100" cy="100" r="50"></circle>
                         <circle cx="100" cy="100" r="50" id="dio"></circle>
                     </svg>
-                    <div class="testo">
-                        <p>Allora mo lo metto io</p> sto cazzo di testo<p>dio cane</p><span>poi mi vado a fare una bella
-                            sega</span>
+                    <div class="testoCorrect">
+                        <p><span>Congratulation!</span></p><span style="color:#00ffffdf ;">You passed the exam.</span><p></p>
+                        <p>We'll send you the certificate <br>in few minutes <br>
+                        Check your email (including <br>promotions / spam folder)</p>
                     </div>
                 </div>
                 <div class="footer">
-            <button id="ultimoButton">RATE US</button>
-        </div>
+                    <button class="ultimoButton">RATE US</button>
+                </div>
             </div>
         </div>
-         <div id="wrong">
-                <h2 id="insuccessiPercentuale">Wrong <br>33%</h2>
-                <p id="insuccessi">
-                <p>questions 4/10</p>
-            </div>
+        <div id="wrong">
+
+            <h2 id="insuccessiPercentuale"></h2>
+            <p id="insuccessi"></P>
+        </div>
         <div id="correct">
-            <h2 id="successiPercentuale">Correct<br>66.7%</h2>
-            <p id="successi">
-            <p>4/6 questions </p>
-            </p>
+            <h2 id="successiPercentuale"></h2>
+            <p id="successi"></p>
         </div>
 
     </main>
-
-<script src="assets/js/result.js"></script>
 </div>
+<script src="assets/js/result.js"></script>
 </body>
+
 
 
 </html>

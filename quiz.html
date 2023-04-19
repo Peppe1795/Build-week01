@@ -5,56 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result</title>
+    <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <header>
-        <div>
-            <img src="assets/img/epicode_logo.png">
-        </div>
+        <img src="assets/img/epicode_logo.png" alt="logo">
     </header>
-    <main id="container">
-        <div id="cover-center">
-            <span>
-                <h1>Results</h1>
-            </span>
-            <h2>The summary of your answer:</h2>
-
-            <div id="value">
-
-                <div class="cerchio" style="--clr1:#00ffffdf;">
-                    <svg viewBox="40 40 120 120" width="500px" height="500px">
-                        <circle cx="100" cy="100" r="50"></circle>
-                        <circle cx="100" cy="100" r="50" id="dio"></circle>
-                    </svg>
-                    <div class="testoCorrect">
-                        <p><span>Congratulation!</span></p><span style="color:#00ffffdf ;">You passed the exam.</span><p></p>
-                        <p>We'll send you the certificate <br>in few minutes <br>
-                        Check your email (including <br>promotions / spam folder)</p>
-                    </div>
-                </div>
-                <div class="footer">
-                    <button class="ultimoButton">RATE US</button>
+    <main>
+<div id="countDown">
+            <div class="circle" style="--clr: #00ffff;">
+               <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" id="ss"></circle>
+                </svg>
+                 <div id="content">
+                    <p>SECONDS</p>
+                    <aside></aside>
+                    <p>REMAINING</p>
                 </div>
             </div>
         </div>
-        <div id="wrong">
-
-            <h2 id="insuccessiPercentuale"></h2>
-            <p id="insuccessi"></P>
+<form>
+<h1 id="domanda">domanda</h1>
+            <div class="forum">
+                <button type="button" id="a">luca</button>
+                <button type="button" id="b">dario</button>
+                <br>
+                <button type="button" id="c">andrea</button>
+                <button type="button" id="d">giuseppe</button>
+            </div>
+        </form>
         </div>
-        <div id="correct">
-            <h2 id="successiPercentuale"></h2>
-            <p id="successi"></p>
-        </div>
-
     </main>
-</div>
-<script src="assets/js/result.js"></script>
+    <footer>
+        <h3></h3>
+    </footer>
+<script src="assets/js/quiz.js"></script>
 </body>
-
 
 
 </html>
