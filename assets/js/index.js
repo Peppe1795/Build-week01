@@ -10,13 +10,10 @@ const verifica = () => {
     checkB.addEventListener('click', function () {
         if (checkB.checked) {
             btnVerifica.disabled = false;
+        } else if (checkB.checked == false) {
+            btnVerifica.disabled = true
         }
     });
 }
+
 verifica();
- 
-btnVerifica.addEventListener('click', function() {
-if (btnVerifica.disabled = false) {
-    btnVerifica.gotoLink('../../quiz.html')
-}
- });

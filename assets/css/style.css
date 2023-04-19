@@ -173,6 +173,7 @@ span{
 #countDown {
     text-align: right;
     margin-right: 5%;
+    height: 180px;
 }
 
 .circle p {
@@ -245,4 +246,19 @@ aside {
     stroke-dasharray: 360;
     stroke-dashoffset: 200;
 
+}
+
+.forum {
+    display: inline-block;
+}
+
+.forum button {
+    background-color: rgba(128, 128, 128, 0.1);
+    color: white;
+    width: 350px;
+    height: 70px;
+    border-radius: 50px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    border: 3px outset ;
 }
