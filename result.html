@@ -10,49 +10,47 @@
 </head>
 
 <body>
-    <header>
-        <div>
-            <img src="assets/img/epicode_logo.png">
-        </div>
-    </header>
-    <main>
-        <div class="principale">
-            <div class="titolo">
+    <main id="container">
+        <header>
+            <div>
+                <img src="assets/img/epicode_logo.png">
+            </div>
+
+        </header>
+
+        <div id="cover-center">
+            <span>
                 <h1>Results</h1>
-                <h2>The summary of your answer:</h2>
+            </span>
+            <h2>The summary of your answer:</h2>
+            <div id="wrong">
+                <h2>Wrong</h2>
+                <h2 id="insuccessiPercentuale">33%</h2>
+                <p id="insuccessi">3/10</p>
             </div>
-            <div class="inlinea">
-                <div class='corretto'>
-                    <h2>Correct</h2>
-                    <h2 id="successiPercentuale"></h2>
-                    <p id="successi"></p>
-                </div>
-                <div id="valutazioni">
-                    <div class="cerchio" style="--clr1:#00ffffdf;">
-                        <svg viewBox="-30 0 250 250" width="300" height="300">
-                            <circle cx="100" cy="100" r="50"></circle>
-                            <circle cx="100" cy="100" r="50" id="dio"></circle>
-                        </svg>
-
-                    </div>
-                </div>
-                <div class='sbagliato'>
-                    <h2>Wrong</h2>
-                    <h2 id="insuccessiPercentuale"></h2>
-                    <p id="insuccessi"></p>
+            <div id="value">
+                <div class="cerchio" style="--clr1:#00ffffdf;">
+                    <svg viewBox="40 40 120 120" width="500px" height="500px">
+                        <circle cx="100" cy="100" r="50"></circle>
+                        <circle cx="100" cy="100" r="50" id="dio"></circle>
+                    </svg>
+                    <div class="testo"><h2> </h2></div>
                 </div>
             </div>
         </div>
+        <div id="correct">
+            <h2>Correct</h2>
+            <h2 id="successiPercentuale">66%</h2>
+            <p id="successi">4/10</p>
+        </div>
+
     </main>
-
-
-
-
     <footer>
         <button class="ultimoButton">RATE US</button>
     </footer>
-    </div>
-    <script src="assets/js/result.js"></script>
+
 </body>
+<script src="assets/js/result.js"></script>
+</div>
 
 </html>
