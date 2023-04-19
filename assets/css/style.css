@@ -158,10 +158,9 @@ span {
 }
 
 #correct {
-    width: 5%;
+padding-left: 50px;
     height: 50%;
     float: left;
-    margin-right: 100px;
 }
 
 #wrong {
