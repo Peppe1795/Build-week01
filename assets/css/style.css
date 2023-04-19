@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Outfit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:&display=swap');
 
 html,
 body {
     margin: 0;
     padding: 0;
     border: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     background-image: url('../img/bg.jpg');
     background-size: cover;
     background-position: center;
@@ -147,88 +147,133 @@ span {
 
 }
 
+/* CSS PAGINA RESULT */
+
 #container {
-    width: 60%;
-    height: 100%;
-    margin: 0 auto;
+    width: 70%;
+    height: 80%;
     font-weight: normal;
     color: #E3E3E8;
+    margin: 0 auto;
 }
 
 #correct {
-    width:5%;
-    height: 100px;
-    float:left;  
+    width: 5%;
+    height: 50%;
+    float: left;
+    margin-right: 100px;
 }
 
 #wrong {
-    width: 20%;
-    height: 100%;
-    float: right;      
+    height: 50%;
+    float: right;
+    padding-right: 80px;
 }
 
 #value {
-    padding-top:50px;
-    width: 55%;
+    padding-top: 20px;
+    width: 70%;
     height: 40%;
     float: right;
     margin: 0 auto;
     position: absolute;
 }
 
-#container h2 {
-    
-}
-
-#container h1 {
-    
-}
-
 #cover-center {
     display: content;
 }
+
 #wrong h2 {
-    font-size: 4em;
+    padding-top: 120px;
+    font-size: 3.5em;
     line-height: 0.9;
     margin-bottom: 0;
     text-align: right;
 }
+
 #correct h2 {
-    font-size: 4em;
+    padding-top: 120px;
+    font-size: 3.5em;
     line-height: 0.9;
     text-align: right;
     margin-bottom: 0;
-    
+
 }
+
 #correct p {
-    text-align:left;
+    text-align: left;
     margin: 0;
+}
+#correct h1 {
+    margin: 0;
+    padding: 0;
+
 }
 #wrong p {
     text-align: right;
     margin: 0;
 }
-#ultimoButton {
+
+.testoCorrect {
+    font-size: 0.8em;
+}
+
+.ultimoButton {
     background-color: transparent;
     padding: 0.7em 2.7em;
     color: white;
     font-weight: bold;
     box-shadow: 0px 0px 25px 10px #262266;
     border: 1px solid white;
-    font-size: 1.5em; 
-    margin: 0;   
+    font-size: 1.5em;
+    margin: 0;
 }
-.footer{
-   display: contents;
-   
-    
-   
+
+.footer {
+    display: contents;
 }
-.cerchio{
-    
+
+.cerchio {
     height: 120%;
+}
+
+#value .circle svg {
+    width: 160px;
+    height: 160px;
     
 }
+
+#value .cerchio svg {
+    fill: transparent;
+    stroke-width: 20px;
+    stroke: #d20093d5;
+    stroke-linecap: square;
+    transform: translate(4px, 4px);
+    transform: rotate(270deg) rotateX(180deg);
+    
+}
+
+#value .cerchio svg circle:nth-child(2) {
+    stroke: var(--clr1);
+    stroke-dasharray: 360;
+    stroke-dashoffset: 108;
+
+}
+
+#value div .testoCorrect {
+    position: relative;
+    bottom: 80%;
+    text-align: center;
+    color: white;
+    font-size: 500;
+}
+#testoCorrect span {
+    font-size: 1.5em;
+    font-weight: lighter;
+    
+}
+
+/* CSS DEL TIMER PAGINA BENCH */
 
 #content {
     box-sizing: border-box;
@@ -296,38 +341,14 @@ aside {
 }
 
 
-#value .circle svg {
-    width: 160px;
-    height: 160px;
-}
-#value .cerchio svg {
-    fill: transparent;
-    stroke-width: 20px;
-    stroke: #d20093d5;
-    stroke-linecap: square;
-    transform: translate(4px,4px);
-    transform: rotate(270deg) rotateX(180deg);
 
-}
-
-#value .cerchio svg circle:nth-child(2) {
-    stroke: var(--clr1);
-    stroke-dasharray: 360;
-    stroke-dashoffset: 120;
-
-}
-#value div .testo{
-    position: relative;
-    bottom: 350px;
-    text-align: center;
-    color: white;
-    font-size: 500;
-    transform: ();
-}
 .testo p {
     padding: 0;
     margin-bottom: 0;
 }
+
+
+/* CSS PAGINA BENCHMARK */
 
 
 .forum {
