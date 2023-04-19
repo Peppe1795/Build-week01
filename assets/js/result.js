@@ -4,7 +4,7 @@ var insuccessi = totaleDomande - successi;
 var successiPercentuale = successi/totaleDomande * 100;
 var insuccessiPercentuale = insuccessi/totaleDomande * 100;
 var testo;
-
+var btnRateUs = document.getElementById('ultimoButton');
 
 document.getElementById("successiPercentuale").innerHTML= successiPercentuale + "%";
 document.getElementById("insuccessiPercentuale").innerHTML= insuccessiPercentuale + "%";
@@ -33,3 +33,11 @@ const dashboard = function(){
 
     }
 }
+
+const vaiArate = () => {
+   btnRateUs.addEventListener('click', function() {
+    window.open('../../feedback.html');
+    });
+}
+
+vaiArate();
