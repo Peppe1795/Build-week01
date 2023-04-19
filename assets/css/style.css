@@ -136,10 +136,25 @@ span{
 .primoButton {
 	width: auto;
 }
+#check1 {
+    appearance: none;
+    border: 2px solid white;
+    background-color: #0B113B;
+    width: 16px;
+    height: 16px;
+}
 
-#check1:checked {
-    accent-color: #262266;
-   
+#check1::before {
+    visibility: hidden;
+}
+
+#check1:checked::after {
+    visibility: visible;
+    font-size: 12px;
+    content: '\2713';
+    position: relative;
+   text-align: center;
+  
 }
 
 .ultimoButton {
@@ -222,7 +237,6 @@ aside {
     stroke-linecap:square;
     stroke-linejoin:miter;
 }
-/* css del gradient di valutazione finale*/
 
 
 #valutazioni .circle svg {

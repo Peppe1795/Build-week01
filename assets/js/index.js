@@ -22,8 +22,6 @@ const paginaDopo = () => {
     btnVerifica.addEventListener('click', function() {
 if (checkB.checked) {
     window.open('../../quiz.html');
-}else {
-    alert('che clicchi se non spunti');
 }
     });
 }
