@@ -166,7 +166,7 @@ if (questions[index].incorrect_answers.length == 2) {
 }
 
 function scelta() {
-  elementA.addEventListener('click' , confrontoA());
+  elementA.addEventListener('click', confrontoA());
   elementB.addEventListener('click', confrontoB());
   elementC.addEventListener('click', confrontoC());
   elementD.addEventListener('click', confrontoD());
