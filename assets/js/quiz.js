@@ -99,12 +99,6 @@ const questions = [
   },
 ];
 
-window.addEventListener('load', function() {
-  countDown;
-  scelta();
-  arrayDomande();
-  
-})
 
 const timeS = document.querySelector('aside');
 let timeSeconds = 30;
@@ -172,28 +166,41 @@ if (questions[index].incorrect_answers.length == 2) {
 }
 
 function scelta() {
-  bottoni.forEach((element) => {
-    if (timeSeconds > 1) {
-      element.addEventListener('click', confrontoA());
-    } else if (timeSeconds == 0) {
-      domandaSuccessiva();
-    }
-  })
+  elementA.addEventListener('click' , confrontoA());
+  elementB.addEventListener('click', confrontoB());
+  elementC.addEventListener('click', confrontoC());
+  elementD.addEventListener('click', confrontoD());
 }
 
 scelta();
 
 function confrontoA() {
   if (elementA.textContent == questions[index].correct_answer) {
-    successi++
-  } else {
-    questions[index]++
+      successi++
   }
+  index++
 };
 
-function domandaSuccessiva() {
-
+function confrontoB() {
+  if (elementB.textContent == questions[index].correct_answer) {
+      successi++
+  }
+  index++
 }
+function confrontoC() {
+  if (elementC.textContent == questions[index].correct_answer) {
+      successi++
+  }
+  index++
+}
+function confrontoD() {
+  if (elementD.textContent == questions[index].correct_answer) {
+      successi++;
+  }
+  index++;
+}
+
+
 //localStorage.setItem(successi); // per passare il risultato alla pagina 3
 
 /*if (index > questions.length){
