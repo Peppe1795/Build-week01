@@ -21,7 +21,7 @@ verifica();
 const paginaDopo = () => {
     btnVerifica.addEventListener('click', function() {
 if (checkB.checked) {
-    window.open('../../quiz.html');
+    location.href =('../../quiz.html');
 }
     });
 }
