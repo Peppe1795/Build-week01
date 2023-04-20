@@ -292,5 +292,5 @@ function controllo() {
 }
 
 function progressi() {
-    document.getElementById('progresso').innerHTML = (indiceDomanda + 1) + '/10 Questions'
+    document.getElementById('progresso').innerHTML = `QUESTION  ${indiceDomanda + 1} <span style= "color: #d20094">/10</span>`
 }

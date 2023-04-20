@@ -103,6 +103,14 @@ header img {
     color: #0B113B;
 }
 
+#domanda {
+    font-size: 30px;
+}
+
+#progresso {
+    font-size: 20px;
+}
+
 .stars img {
     width: 2.5%;
     padding: 0.2em;
