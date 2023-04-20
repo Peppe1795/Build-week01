@@ -99,12 +99,16 @@ const questions = [
   },
 ];
 
+window.addEventListener('load', function () {
+  countDown;
+  
+})
 
+/*timer*/
 const timeS = document.querySelector('aside');
 let timeSeconds = 30;
 var barra = document.querySelector('circle');
 timeS.innerHTML = ` ${timeSeconds}`;
-
 let countDown = setInterval(() => {
   secondi = document.querySelector('#ss').style.strokeDashoffset = - 420 - (440 * timeSeconds) / 30;
   timeSeconds--;
@@ -114,59 +118,62 @@ let countDown = setInterval(() => {
   }
 
 }, 1000);
+/*--------------------------------*/
 
-var index = 0;
-var successi = 0;
-var domande = 0;
-var elementA = document.getElementById('a')
-var elementB = document.getElementById('b')
-var elementC = document.getElementById('c')
-var elementD = document.getElementById('d')
-var bottoni = document.querySelectorAll('.forum button')
+const a_text = document.getElementById('a_text');
+const b_text = document.getElementById('b_text');
+const c_text = document.getElementById('c_text');
+const d_text = document.getElementById('d_text');
+var nextBtn = document.getElementById('nextItems')
+var questionEl = document.getElementById('question')
 
-const arrayRandomDomande = [];
-const ArrayRandomRisposte = [];
+
+let index = 0;
+
+
+const ArrayDom = [];
+const answerA = [];
 function arrayDomande() {
   for (i = 0; i < questions.length; i++) {
     index = Math.floor(Math.random() * questions.length)
-    if (!arrayRandomDomande.includes(index)) {
-      arrayRandomDomande.push(index);
+    if (!ArrayDom.includes(index)) {
+      ArrayDom.push(index);
     } else {
-      i = i - 1;
+     i++;
     }
-    risposte();
-    inserisciTesto()
-    confrontoA();
-    confrontoB();
-    confrontoC();
-    confrontoD();
-
   }
 }
 arrayDomande();
 
-console.log(arrayRandomDomande);
-console.log(questions[arrayRandomDomande[0]].question);
-function risposte() {
-  ArrayRandomRisposte.push(questions[index].correct_answer)
-  for (k = 0; k < questions[index].incorrect_answers.length; k++) {
-    ArrayRandomRisposte.push(questions[index].incorrect_answers[k]);
-  }
-  ArrayRandomRisposte.sort();
+answerA.push(questions[index].correct_answer)
+for (k = 0; k < questions[index].incorrect_answers.length; k++) {
+  answerA.push(questions[index].incorrect_answers[k]);
+}
+answerA.sort();
+console.log(answerA);
+
+loadQuiz();
+function loadQuiz() {
+  const currentQuizData = questions[index];
+  questionEl.innerText = currentQuizData.question;
+
+  a_text.innerHTML = answerA[0];
+  b_text.innerHTML = answerA[1];
+  c_text.innerHTML = answerA[2];
+  d_text.innerHTML = answerA[3];
 }
 
-console.log(ArrayRandomRisposte);
-function inserisciTesto() {
-  document.getElementById('domanda').innerHTML = questions[index].question;
-  elementA.innerHTML = ArrayRandomRisposte[0];
-  elementB.innerHTML = ArrayRandomRisposte[1];
-  elementC.innerHTML = ArrayRandomRisposte[2];
-  elementD.innerHTML = ArrayRandomRisposte[3];
+nextBtn.addEvenListener("click", () => {
+   index++;
+});
+
+function scambio (){
+  if (countDown() <= 0){
+    index++;
+  } 
 }
 
-inserisciTesto()
-
-if (questions[index].incorrect_answers.length == 2) {
+/*if (questions[index].incorrect_answers.length == 2) {
   elementC.style.display = 'none';
   elementD.style.display = 'none';
 } else {
@@ -174,37 +181,29 @@ if (questions[index].incorrect_answers.length == 2) {
   elementD.style.display = 'inline-block';
 }
 
+function scelta() {
+  bottoni.forEach((element) => {
+    if (timeSeconds > 1) {
+      element.addEventListener('click', confrontoA());
+    } else if (timeSeconds == 0) {
+      domandaSuccessiva();
+    }
+  })
+}
 
-
-console.log(index)
+scelta();
 
 function confrontoA() {
   if (elementA.textContent == questions[index].correct_answer) {
     successi++
+  } else {
+    questions[index]++
   }
- domande++
 };
 
-function confrontoB() {
-  if (elementB.textContent == questions[index].correct_answer) {
-    successi++
-  }
- domande++
-}
-function confrontoC() {
-  if (elementC.textContent == questions[index].correct_answer) {
-    successi++
-  }
- domande++
-}
-function confrontoD() {
-  if (elementD.textContent == questions[index].correct_answer) {
-    successi++;
-  }
- domande++;
-}
+function domandaSuccessiva() {
 
-
+}
 //localStorage.setItem(successi); // per passare il risultato alla pagina 3
 
 /*if (index > questions.length){
