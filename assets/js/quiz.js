@@ -103,20 +103,21 @@ const questions = [
 const timeS = document.querySelector('aside');
 let timeSeconds = 30;
 var barra = document.querySelector('circle');
-timeS.innerHTML =` ${timeSeconds}`;
+timeS.innerHTML = ` ${timeSeconds}`;
 
 let countDown = setInterval(() => {
-    secondi = document.querySelector('#ss').style.strokeDashoffset = - 420  - (440 * timeSeconds) / 30;
-    timeSeconds--;
-    timeS.innerHTML = `${timeSeconds} `;
-    if (timeSeconds <= 0 || timeSeconds < 1) {
-        clearInterval(countDown);
-    }
+  secondi = document.querySelector('#ss').style.strokeDashoffset = - 420 - (440 * timeSeconds) / 30;
+  timeSeconds--;
+  timeS.innerHTML = `${timeSeconds} `;
+  if (timeSeconds <= 0 || timeSeconds < 1) {
+    clearInterval(countDown);
+  }
 
 }, 1000);
 
 var index = 0;
 var successi = 0;
+var domande = 0;
 var elementA = document.getElementById('a')
 var elementB = document.getElementById('b')
 var elementC = document.getElementById('c')
@@ -133,18 +134,26 @@ function arrayDomande() {
     } else {
       i = i - 1;
     }
+    risposte();
+    inserisciTesto()
+    confrontoA();
+    confrontoB();
+    confrontoC();
+    confrontoD();
+
   }
 }
 arrayDomande();
 
 console.log(arrayRandomDomande);
 console.log(questions[arrayRandomDomande[0]].question);
-
-ArrayRandomRisposte.push(questions[index].correct_answer)
-for (k = 0; k < questions[index].incorrect_answers.length; k++) {
-  ArrayRandomRisposte.push(questions[index].incorrect_answers[k]);
+function risposte() {
+  ArrayRandomRisposte.push(questions[index].correct_answer)
+  for (k = 0; k < questions[index].incorrect_answers.length; k++) {
+    ArrayRandomRisposte.push(questions[index].incorrect_answers[k]);
+  }
+  ArrayRandomRisposte.sort();
 }
-ArrayRandomRisposte.sort();
 
 console.log(ArrayRandomRisposte);
 function inserisciTesto() {
@@ -165,39 +174,34 @@ if (questions[index].incorrect_answers.length == 2) {
   elementD.style.display = 'inline-block';
 }
 
-function scelta() {
-  elementA.addEventListener('click', confrontoA());
-  elementB.addEventListener('click', confrontoB());
-  elementC.addEventListener('click', confrontoC());
-  elementD.addEventListener('click', confrontoD());
-}
 
-scelta();
+
+console.log(index)
 
 function confrontoA() {
   if (elementA.textContent == questions[index].correct_answer) {
-      successi++
+    successi++
   }
-  index++
+ domande++
 };
 
 function confrontoB() {
   if (elementB.textContent == questions[index].correct_answer) {
-      successi++
+    successi++
   }
-  index++
+ domande++
 }
 function confrontoC() {
   if (elementC.textContent == questions[index].correct_answer) {
-      successi++
+    successi++
   }
-  index++
+ domande++
 }
 function confrontoD() {
   if (elementD.textContent == questions[index].correct_answer) {
-      successi++;
+    successi++;
   }
-  index++;
+ domande++;
 }
 
 

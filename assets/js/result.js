@@ -4,7 +4,7 @@ var insuccessi = totaleDomande - successi;
 var successiPercentuale = (successi * 100) / totaleDomande;
 var insuccessiPercentuale = (insuccessi* 100) / totaleDomande;
 var testo = document.querySelector('.testoCorrect');
-var btnRateUs = document.getElementById('ultimoButton');
+var btnRateUs = document.querySelector('.ultimoButton');
 var indexC = document.getElementById("successi").innerText = `${successi}/${totaleDomande} questions`;
 var indexW = document.getElementById("insuccessi").innerHTML = `${insuccessi}/${totaleDomande} questions`;
 
@@ -25,7 +25,7 @@ value();
 value()
 const vaiArate = () => {
     btnRateUs.addEventListener('click', function () {
-        window.open('../../feedback.html');
+       location.href = ('../../feedback.html');
     });
 }
 

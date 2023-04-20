@@ -16,7 +16,7 @@ var hoverstars = () => {
     stelle.forEach((star, item) => {
         star.addEventListener('mouseenter', () => {
             stelle.forEach((star, item1) => {
-                item > item1 ? star.classList.add('stelleColorate') : star.classList.remove('stelleColorate');
+                item +1 > item1  ? star.classList.add('stelleColorate') : star.classList.remove('stelleColorate');
             });
         });
     });
