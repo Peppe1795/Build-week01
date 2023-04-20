@@ -98,9 +98,12 @@ const questions = [
     },
 ];
 
+
+
+
 //variabili
 
-
+var t = 0
 var domanda
 var successi = 0
 var indiceDomanda = 0
@@ -114,10 +117,33 @@ var elementA = document.getElementById('a')
 var elementB = document.getElementById('b')
 var elementC = document.getElementById('c')
 var elementD = document.getElementById('d')
-//richiamo funzioni
+
+const timeS = document.querySelector('aside');
+let timeSeconds = 30;
+var barra = document.querySelector('circle');
+timeS.innerHTML = ` ${timeSeconds}`;
+let countDown = setInterval(() => {
+    secondi = document.querySelector('#ss').style.strokeDashoffset = - 420 - (440 * timeSeconds) / 30;
+    timeSeconds--;
+    timeS.innerHTML = `${timeSeconds} `;
+    if (timeSeconds <= 0 || timeSeconds < 1) {
+        timeSeconds = 30;
+        indiceArray++;
+        controllo();
+        quiz();
+        inserisciTesto();
+    }
+
+}, 1000);
+
 arrayDomande()
-//indicizzazione()
 quiz()
+confrontoA()
+confrontoB()
+confrontoC()
+confrontoD()
+
+
 function quiz() {
     avanzamento() // avanzamento dell'indice domanda 
     svuotaRisposte() // svuota array risposte
@@ -125,15 +151,12 @@ function quiz() {
     rispRandom() // genera risposte
     DomRandom()
     inserisciTesto() // scrivi domande e risposte
+    progressi()
     boolean() // adatta se booleano
     avanzamento() // avanzamento dell'indice domanda 
     fine()// vai a pagina 3
 }
 
-confrontoA()
-confrontoB()
-confrontoC()
-confrontoD()
 //struttura funzioni
 
 function arrayDomande() {
@@ -148,20 +171,7 @@ function arrayDomande() {
     index = 0
     console.log(arrayRandomIndici)
 }
-/*
-function arrayDomande() {
-    for (i = questions.length - 1; i > 0; i--) {
-        index = Math.floor(Math.random() * (i+1))
-        if (!arrayRandomIndici.includes(index)) {
-            arrayRandomIndici.push(index);
-        } else {
-            i++
-        }
-    }
-    index = 0
-    //console.log(arrayRandomIndici)
-}
-*/
+
 function rispRandom() {
     arrayRandomRisposte.push(questions[indicequestions].correct_answer)
     for (k = 0; k < questions[indicequestions].incorrect_answers.length; k++) {
@@ -206,13 +216,15 @@ function boolean() {
 }
 
 function svuotaRisposte() {
-    for (k = 0; k < arrayRandomRisposte.length + 1; k++)
+    for (k = 0; k < arrayRandomRisposte.length + 2; k++)
         arrayRandomRisposte.pop()
+    k--
 }
 
 function svuotaDomande() {
     for (k = 0; k < arrayRandomDomande.length + 1; k++)
-        arrayRandomRisposte.pop()
+        arrayRandomDomande.shift()
+    k--
 }
 
 function confrontoA() {
@@ -273,7 +285,12 @@ function indicizzazione() {
 
 function controllo() {
     if (indiceDomanda >= questions.length) {
-        location.href = ('../../result.html')
+        localStorage.setItem('successi', successi)
+        location.href = '../../result.html'
     }
     console.log('esatte: ' + successi)
+}
+
+function progressi() {
+    document.getElementById('progresso').innerHTML = (indiceDomanda + 1) + '/10 Questions'
 }
