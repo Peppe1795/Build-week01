@@ -307,7 +307,7 @@ function controllo() {
 }
 
 function progressi () {
-    document.getElementById('progresso').innerHTML = `QUESTION ${indiceDomanda+1}<span style="color: black">/10<span>`;
+    document.getElementById('progresso').innerHTML = `QUESTION ${indiceDomanda+1}<span style="color: #d20094" > / 10<span>`;
 };
 
 
