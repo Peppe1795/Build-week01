@@ -149,6 +149,7 @@ function quiz() {
     boolean() // adatta se booleano
     avanzamento() // avanzamento dell'indice domanda 
     fine()// vai a pagina 3
+    timeSeconds = 30;
 }
 
 confrontoA();
