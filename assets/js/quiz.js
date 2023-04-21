@@ -227,17 +227,17 @@ function boolean() {
 }
 
 function svuotaRisposte() {
-    for (k = 0; k < arrayRandomRisposte.length + 1; k++)
+    for (k = 0; k < arrayRandomRisposte.length + 2; k++)
         arrayRandomRisposte.pop()
 }
 
 function svuotaDomande() {
-    for (k = 0; k < arrayRandomDomande.length + 1; k++)
+    for (k = 0; k < arrayRandomDomande.length + 2; k++)
         arrayRandomRisposte.pop()
 }
 
 function confrontoA() {
-    elementA.addEventListener('click', () => {
+    elementA.addEventListener('click', function() {
         if (elementA.textContent == questions[indicequestions].correct_answer) {
             successi++
         }
@@ -249,7 +249,7 @@ function confrontoA() {
 };
 
 function confrontoB() {
-    elementB.addEventListener('click', () => {
+    elementB.addEventListener('click', function() {
         if (elementB.textContent == questions[indicequestions].correct_answer) {
             successi++
         }
@@ -261,7 +261,7 @@ function confrontoB() {
 };
 
 function confrontoC() {
-    elementC.addEventListener('click', () => {
+    elementC.addEventListener('click', function() {
         if (elementC.textContent == questions[indicequestions].correct_answer) {
             successi++
         }
@@ -273,16 +273,17 @@ function confrontoC() {
 };
 
 function confrontoD() {
-    elementD.addEventListener('click', () => {
+    elementD.addEventListener('click', function() {
         if (elementD.textContent == questions[indicequestions].correct_answer) {
             successi++
-        }
+        } 
         indiceArray++
         controllo()
         quiz()
     })
 
 };
+
 
 function fine() {
     indiceDomanda++
@@ -294,7 +295,7 @@ function indicizzazione() {
 
 function controllo() {
     if (indiceDomanda >= questions.length) {
-        location.href = ('fine.html')
+        location.href = ('../../result.html');
     }
     console.log('esatte: ' + successi)
 }
