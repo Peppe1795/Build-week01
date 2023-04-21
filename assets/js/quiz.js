@@ -98,12 +98,9 @@ const questions = [
     },
 ];
 
-
-
-
 //variabili
 
-var t = 0
+
 var domanda
 var successi = 0
 var indiceDomanda = 0
@@ -136,14 +133,11 @@ let countDown = setInterval(() => {
 
 }, 1000);
 
+
+//richiamo funzioni
 arrayDomande()
+//indicizzazione()
 quiz()
-confrontoA()
-confrontoB()
-confrontoC()
-confrontoD()
-
-
 function quiz() {
     avanzamento() // avanzamento dell'indice domanda 
     svuotaRisposte() // svuota array risposte
@@ -157,6 +151,10 @@ function quiz() {
     fine()// vai a pagina 3
 }
 
+confrontoA()
+confrontoB()
+confrontoC()
+confrontoD()
 //struttura funzioni
 
 function arrayDomande() {
@@ -171,7 +169,20 @@ function arrayDomande() {
     index = 0
     console.log(arrayRandomIndici)
 }
-
+/*
+function arrayDomande() {
+    for (i = questions.length - 1; i > 0; i--) {
+        index = Math.floor(Math.random() * (i+1))
+        if (!arrayRandomIndici.includes(index)) {
+            arrayRandomIndici.push(index);
+        } else {
+            i++
+        }
+    }
+    index = 0
+    //console.log(arrayRandomIndici)
+}
+*/
 function rispRandom() {
     arrayRandomRisposte.push(questions[indicequestions].correct_answer)
     for (k = 0; k < questions[indicequestions].incorrect_answers.length; k++) {
@@ -216,15 +227,13 @@ function boolean() {
 }
 
 function svuotaRisposte() {
-    for (k = 0; k < arrayRandomRisposte.length + 2; k++)
+    for (k = 0; k < arrayRandomRisposte.length + 1; k++)
         arrayRandomRisposte.pop()
-    k--
 }
 
 function svuotaDomande() {
     for (k = 0; k < arrayRandomDomande.length + 1; k++)
-        arrayRandomDomande.shift()
-    k--
+        arrayRandomRisposte.pop()
 }
 
 function confrontoA() {
@@ -285,12 +294,11 @@ function indicizzazione() {
 
 function controllo() {
     if (indiceDomanda >= questions.length) {
-        localStorage.setItem('successi', successi)
-        location.href = '../../result.html'
+        location.href = ('fine.html')
     }
     console.log('esatte: ' + successi)
 }
 
-function progressi() {
-    document.getElementById('progresso').innerHTML = `QUESTION  ${indiceDomanda + 1} <span style= "color: #d20094">/10</span>`
-}
+function progressi () {
+    document.getElementById('progresso').innerHTML = `QUESTION ${indiceDomanda+1}<span style="color: black">/10<span>`;
+};
