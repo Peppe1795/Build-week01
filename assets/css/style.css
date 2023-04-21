@@ -91,19 +91,26 @@ span {
     background-color: #0B113B;
     width: 16px;
     height: 16px;
+    position: relative;
+    margin: 0;
+    margin-left: 23px;
+}
+
+label {
+    padding-left: 10px;
 }
 
 #check1::before {
     visibility: hidden;
+
 }
 
 #check1:checked::after {
     visibility: visible;
     font-size: 12px;
     content: '\2713';
-    position: relative;
+    position: fixed;
     text-align: center;
-
 }
 
 .primoButton {
