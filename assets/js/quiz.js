@@ -151,10 +151,10 @@ function quiz() {
     fine()// vai a pagina 3
 }
 
-confrontoA()
-confrontoB()
-confrontoC()
-confrontoD()
+confrontoA();
+confrontoB();
+confrontoC();
+confrontoD();
 //struttura funzioni
 
 function arrayDomande() {
@@ -249,7 +249,8 @@ function confrontoA() {
 };
 
 function confrontoB() {
-    elementB.addEventListener('click', function() {
+    elementB.addEventListener('click', function(event) {
+        event.preventDefault();
         if (elementB.textContent == questions[indicequestions].correct_answer) {
             successi++
         }
@@ -261,7 +262,8 @@ function confrontoB() {
 };
 
 function confrontoC() {
-    elementC.addEventListener('click', function() {
+    elementC.addEventListener('click', function(event) {
+        event.preventDefault()
         if (elementC.textContent == questions[indicequestions].correct_answer) {
             successi++
         }
@@ -273,7 +275,8 @@ function confrontoC() {
 };
 
 function confrontoD() {
-    elementD.addEventListener('click', function() {
+    elementD.addEventListener('click', function(event) {
+        event.preventDefault()
         if (elementD.textContent == questions[indicequestions].correct_answer) {
             successi++
         } 
