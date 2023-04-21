@@ -1,4 +1,4 @@
-var successi = 2;
+var successi = localStorage.getItem("successi");;
 var totaleDomande = 10;
 var insuccessi = totaleDomande - successi;
 var successiPercentuale = (successi * 100) / totaleDomande;

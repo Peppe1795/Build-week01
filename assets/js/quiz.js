@@ -237,7 +237,8 @@ function svuotaDomande() {
 }
 
 function confrontoA() {
-    elementA.addEventListener('click', function() {
+    elementA.addEventListener('click', function(event) {
+        event.preventDefault();
         if (elementA.textContent == questions[indicequestions].correct_answer) {
             successi++
         }
@@ -298,6 +299,7 @@ function indicizzazione() {
 
 function controllo() {
     if (indiceDomanda >= questions.length) {
+        localStorage.setItem('successi', successi);
         location.href = ('../../result.html');
     }
     console.log('esatte: ' + successi)
@@ -306,3 +308,5 @@ function controllo() {
 function progressi () {
     document.getElementById('progresso').innerHTML = `QUESTION ${indiceDomanda+1}<span style="color: black">/10<span>`;
 };
+
+
