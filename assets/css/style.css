@@ -387,6 +387,7 @@ aside {
     line-height: 1.4em;
     font-size: 1em;
     text-shadow: 0 0 20px #d20094;
+    cursor: text;
 }
 
 .feedback:focus {
