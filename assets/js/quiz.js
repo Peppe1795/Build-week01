@@ -99,7 +99,11 @@ const questions = [
 ];
 
 //variabili
-
+window.addEventListener('load', function(){
+    if(localStorage.getItem('accesso') != 1) {
+       location.href = '../../index.html';
+    }
+})
 
 var domanda
 var successi = 0
@@ -149,7 +153,7 @@ function quiz() {
     boolean() // adatta se booleano
     avanzamento() // avanzamento dell'indice domanda 
     fine()// vai a pagina 3
-    timeSeconds = 30;
+    timeSeconds = 31;
 }
 
 confrontoA();
@@ -238,7 +242,7 @@ function svuotaDomande() {
 }
 
 function confrontoA() {
-    elementA.addEventListener('click', function(event) {
+    elementA.addEventListener('click', function (event) {
         event.preventDefault();
         if (elementA.textContent == questions[indicequestions].correct_answer) {
             successi++
@@ -251,7 +255,7 @@ function confrontoA() {
 };
 
 function confrontoB() {
-    elementB.addEventListener('click', function(event) {
+    elementB.addEventListener('click', function (event) {
         event.preventDefault();
         if (elementB.textContent == questions[indicequestions].correct_answer) {
             successi++
@@ -264,7 +268,7 @@ function confrontoB() {
 };
 
 function confrontoC() {
-    elementC.addEventListener('click', function(event) {
+    elementC.addEventListener('click', function (event) {
         event.preventDefault()
         if (elementC.textContent == questions[indicequestions].correct_answer) {
             successi++
@@ -277,11 +281,11 @@ function confrontoC() {
 };
 
 function confrontoD() {
-    elementD.addEventListener('click', function(event) {
+    elementD.addEventListener('click', function (event) {
         event.preventDefault()
         if (elementD.textContent == questions[indicequestions].correct_answer) {
             successi++
-        } 
+        }
         indiceArray++
         controllo()
         quiz()
@@ -301,13 +305,14 @@ function indicizzazione() {
 function controllo() {
     if (indiceDomanda >= questions.length) {
         localStorage.setItem('successi', successi);
+        localStorage.setItem('indicedomande', indiceDomanda);
         location.href = ('../../result.html');
     }
     console.log('esatte: ' + successi)
 }
 
-function progressi () {
-    document.getElementById('progresso').innerHTML = `QUESTION ${indiceDomanda+1}<span style="color: #d20094" > / 10<span>`;
+function progressi() {
+    document.getElementById('progresso').innerHTML = `QUESTION ${indiceDomanda + 1}<span style="color: #d20094" > / 10<span>`;
 };
 
 

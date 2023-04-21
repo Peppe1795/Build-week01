@@ -19,12 +19,15 @@ const verifica = () => {
 verifica();
 
 const paginaDopo = () => {
-    btnVerifica.addEventListener('click', function() {
-if (checkB.checked) {
-    location.href = ('../../quiz.html');
-}
+    btnVerifica.addEventListener('click', function () {
+        if (checkB.checked) {
+            localStorage.setItem('accesso', 1);
+            location.href = ('../../quiz.html');
+        }
     });
 }
 
 paginaDopo();
+
+
 
